@@ -9,7 +9,7 @@ CELLS = {}
 function love.load(arg)
     if arg[#arg] == "-debug" then require("mobdebug").start() end
     
-    --local bg = entity("background")
+    local bg = entity("background")
     entity("the_map")
     local ship = entity("local_ship")
     world.camFollow(ship)
@@ -34,6 +34,7 @@ function love.draw()
     
     entity.draw()
     love.graphics.print(love.timer.getFPS().."\n"..entity.enum.."\n"..tostring(ENUM), 16, 16)
+    love.graphics.setColor(255,255,255,80)
     for y = 0, 18 do
         love.graphics.line(-world.camera.x, y*150-world.camera.y,2600-world.camera.x,y*150-world.camera.y)
     end

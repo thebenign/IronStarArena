@@ -11,7 +11,7 @@ local function init(parent)
     ship.sfx:play("engine_2", true)
     ship.sfx:setVolume("engine_2", .1)
     
-    ship.position:set(40, 48)
+    ship.position:set(200, 200)
     ship.collider:setType("circle", 20)
     
     ship.sprite:setSprite("ship")
