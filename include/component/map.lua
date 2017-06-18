@@ -6,8 +6,20 @@ local map = {
 map.__index = map
 
 function map:give()
+    self.id = "map"
     return setmetatable({}, map)
 end
+
+function map.entityFromData(i)
+    local data = map.map_data.map
+    return {
+        position = {
+            x = (i%data.width)*data.tilewidth,
+            y = (math.floor(i/data.width))*data.tileheight
+            }
+        }
+end
+
 
 function map:new(name)
     map.map_data = map.load_map(name)

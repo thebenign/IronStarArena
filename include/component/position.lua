@@ -2,7 +2,7 @@ local position = {}
 position.__index = position
 
 function position.give(entity)
-    return setmetatable({x = 0, y = 0, relative = true}, position)
+    return setmetatable({x = 0, y = 0, a = 0, relative = true}, position)
 end
 
 function position.update()
@@ -17,5 +17,8 @@ function position:set(x, y)
     self.y = y
 end
 
+function position:get()
+    return self.x, self.y
+end
 
 return position

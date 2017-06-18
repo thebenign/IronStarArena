@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="52" height="52" tilewidth="50" tileheight="50" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="52" height="52" tilewidth="50" tileheight="50" nextobjectid="19">
  <tileset firstgid="1" name="Walls" tilewidth="50" tileheight="50" tilecount="15" columns="5">
   <image source="tiles/sheet.png" width="250" height="150"/>
  </tileset>
@@ -2711,4 +2711,16 @@
    <tile gid="7"/>
   </data>
  </layer>
+ <objectgroup name="collider">
+  <object id="1" x="100" y="0" width="2400" height="100"/>
+  <object id="3" x="1300" y="100" width="100" height="800"/>
+  <object id="5" x="1300" y="1300" width="600" height="100"/>
+  <object id="9" x="2500" y="0" width="100" height="2600"/>
+  <object id="10" x="100" y="2500" width="2400" height="100"/>
+  <object id="11" x="0" y="0" width="100" height="2600"/>
+  <object id="12" x="2200" y="700" width="100" height="100"/>
+  <object id="15" x="2200" y="1800" width="100" height="100"/>
+  <object id="17" x="1900" y="500" width="100" height="1600"/>
+  <object id="18" x="1300" y="1800" width="100" height="700"/>
+ </objectgroup>
 </map>

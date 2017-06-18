@@ -21,10 +21,15 @@ function velocity:add(dir, mag)
     
 end
 
-function velocity:update()
-        self.position.x, self.position.y = velocity.trig.translate(self.position.x, self.position.y, self.velocity.dir, self.velocity.mag)
+function velocity:update(alpha)
+        self.position.x, self.position.y = velocity.trig.translate(self.position.x, self.position.y, self.velocity.dir, self.velocity.mag*alpha)
         self.velocity.mag = self.velocity.mag - ((self.velocity.mag > self.velocity.fric) and self.velocity.fric or 0)
         if self.velocity.mag < self.velocity.fric then self.velocity.mag = 0 end
+end
+
+function velocity:set(dir, mag)
+    self.dir = dir
+    self.mag = mag
 end
 
 return velocity

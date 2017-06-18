@@ -1,11 +1,12 @@
-local function init(parent)
-    local bg = setmetatable({}, parent)
+return function(entity)
+    local bg = entity.register()
     
-    bg:has("position", "sprite")
+    bg:has("position", "new_sprite")
+    
     bg.position:setRelative(false)
-    bg.sprite:setSprite("background")
-    bg.sprite:register(bg, 1)
+    
+    bg.new_sprite:set("background", 1)
+    bg.new_sprite:setOrigin(0,0)
+    bg.new_sprite:activate()
     return bg
 end
-
-return init

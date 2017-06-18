@@ -70,11 +70,7 @@ function sprite:addZ(entity, z)
     end
     
     sprite.zlist = new_list
---    print("Adding to zlist\nenum: "..sprite.zenum)
---    for i, v in ipairs(sprite.zlist) do
---        print("index: "..i, tostring(v), "id: "..v.sprite.id)
---    end
---    print("~")
+    collectgarbage()
 end
 
 function sprite.update(entity)
@@ -82,6 +78,7 @@ end
 
 function sprite:destroy()
     sprite.remove(self.sprite.id)
+    return true
 end
 
 function sprite.draw()
@@ -89,16 +86,20 @@ function sprite.draw()
     for i = sprite.zenum, 1, -1 do
         entity = sprite.zlist[i]
         love.graphics.setColor(255,255,255,255)
-        love.graphics.draw(
-            entity.sprite.img,
-            math.floor(entity.position.x-(entity.position.relative and sprite.camera.x or 0)),
-            math.floor(entity.position.y-(entity.position.relative and sprite.camera.y or 0)), 
-            entity.sprite.rot, 
-            entity.sprite.scale, 
-            entity.sprite.scale, 
-            entity.sprite.origin_x, 
-            entity.sprite.origin_y
-        )
+        if entity.sprite.quad then
+
+        else
+            love.graphics.draw(
+                entity.sprite.img,
+                math.floor(entity.position.x-(entity.position.relative and sprite.camera.x or 0)),
+                math.floor(entity.position.y-(entity.position.relative and sprite.camera.y or 0)), 
+                entity.sprite.rot, 
+                entity.sprite.scale, 
+                entity.sprite.scale, 
+                entity.sprite.origin_x, 
+                entity.sprite.origin_y
+            )
+        end
     end
 end
 
