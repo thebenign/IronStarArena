@@ -156,7 +156,7 @@ return function (entity)
                 part:follow(bullet)
                 part.a = ship.position.a
                 part.spread = math.rad(10)
-                part.hsl = {10,128,140,255}
+                part.hsl = {math.random(255),128,140,255}
                 part.pps = 5
                 part.max_s = 10
                 part.min_s = 7

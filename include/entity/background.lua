@@ -1,12 +1,14 @@
 return function(entity)
     local bg = entity.register()
     
-    bg:has("position", "new_sprite")
+    bg:has("position", "sprite")
     
     bg.position:setRelative(false)
     
-    bg.new_sprite:set("background", 1)
-    bg.new_sprite:setOrigin(0,0)
-    bg.new_sprite:activate()
+    --bg.sprite:set("background", 1)
+    --bg.sprite:setOrigin(0,0)
+    --bg.sprite:activate()
+    bg.sprite:setSprite("background")
+    bg.sprite:register(bg, 1)
     return bg
 end

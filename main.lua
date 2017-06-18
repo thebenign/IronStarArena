@@ -15,7 +15,7 @@ require("run")
 function love.load(arg)
     if arg[#arg] == "-debug" then require("mobdebug").start() end
     
-    --local bg = entity("background")
+    local bg = entity("background")
     entity("the_map")
     local ship = entity("local_ship")
     --local hud = entity("hud")
