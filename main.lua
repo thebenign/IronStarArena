@@ -1,5 +1,9 @@
+local include_path = love.filesystem.getSource().."/include/"
 
-package.path = package.path .. ";./include/core/?.lua;./include/component/?.lua;./include/entity/?.lua;./include/helper/?.lua;;"
+package.path = package.path .. ";"..include_path.."core/?.lua;"
+..include_path.."component/?.lua;"
+..include_path.."entity/?.lua;"
+..include_path.."helper/?.lua;"
 
 local env = require("env")
 local world = require("world")

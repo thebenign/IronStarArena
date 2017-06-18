@@ -19,7 +19,7 @@ local entity = setmetatable({
     enum = 0,
     list = {},
     component = {},
-    dpairs = require("dpairs")
+    dpairs = require(".include.helper.dpairs")
     
     }, {__call = function(t, name) return t.new(name) end})
 
